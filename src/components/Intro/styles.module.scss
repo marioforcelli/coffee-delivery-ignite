@@ -1,0 +1,55 @@
+@import '../../styles/global.scss'; 
+
+
+.introContainer{
+    height: 34rem;
+    width: 100%;
+    background: url('src/assets/background-intro.png') no-repeat center,
+                 linear-gradient(0deg, $white 0%, rgba($gray-50, 0.2) 50%, $white 100%);
+    background-size: cover;
+}
+
+.introContent {
+    max-width: 70rem;
+    
+    width: 100%;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    .leftIntro{
+        display: flex;
+        flex-direction: column;
+        gap: 4.125rem;
+    }
+    .leftIntroTop{
+        height: 12rem;
+        max-width: 36rem;
+    }
+
+    h1{
+        font: $text-48 'Baloo 2', cursive;
+        font-weight: 800;
+        line-height: 130%;
+        margin-bottom: 1rem;
+        color: $gray-800;
+    }
+    h2 {
+        font-size: $text-20;
+        font-weight: normal ;
+        line-height: 130%;
+        color: $gray-700;
+    }
+    
+    .leftIntroBottom{
+        flex-direction: column;
+        color: $gray-600;
+        flex-wrap: wrap;
+        max-width: 35.4375rem;
+        display: flex;
+        height: 5.25rem;
+        gap: 1.25rem
+    }
+}

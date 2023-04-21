@@ -10,18 +10,30 @@
     $gray-800: #272221;
     $yellow-100: #F1E9C9;
     $yellow-400: #DBAC2C;
-    $yellow-800:  #C47F17;
+    $yellow-800: #C47F17;
     $purple-100: #EBE5F9;
     $purple-400: #8047F8;
     $purple-800: #4B2995;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    $text-10: 0.625rem;
+    $text-12: 0.75rem;
+    $text-14: 0.875rem;
+    $text-16: 1rem;
+    $text-18: 1.125rem;
+    $text-20: 1.25rem;
+    $text-24: 1.5rem;
+    $text-32: 2rem;
+    $text-48: 3rem;
 
-/*:root{
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /*:root{
 
     $white: #FFF;
 
@@ -47,12 +59,10 @@
 }*/
 
 
-body, input, buttton, textarea{
-    font: 1rem 'Roboto', sans-serif;
-    background-color: $gray-50;
-}
-
-body {
-    margin: 0 auto;
-    width: 83%;
-}
+    body,
+    input,
+    buttton,
+    textarea {
+        font: 1rem 'Roboto', sans-serif;
+        background-color: $gray-50;
+    }

@@ -1,8 +1,12 @@
-@import '../../src/styles/global.scss';
+@import '../../styles/global.scss'; 
 
-.header{
+.headerContainer{
     display: block;
     height: 6.5rem;
+    width: 100%;
+    max-width: 70rem;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .headerContent{

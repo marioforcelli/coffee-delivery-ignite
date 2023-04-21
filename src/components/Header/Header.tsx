@@ -1,11 +1,11 @@
-import headerLogo from '../assets/header-logo.png'
+import headerLogo from '../../assets/header-logo.png'
 import styles from './styles.module.scss'
 import React from 'react'
 import { ShoppingCart, MapPin } from 'phosphor-react'
 
 export default function Header () { 
   return( 
-    <header className={styles.header}>
+    <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
         <div className={styles.headerLeft}>
           <img src={headerLogo} alt='image logo' className={styles.logo}/>
