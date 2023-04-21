@@ -1,0 +1,56 @@
+@import '../../src/styles/global.scss';
+
+.header{
+    display: block;
+    height: 6.5rem;
+}
+
+.headerContent{
+    
+     height: 100%;
+     display: flex;
+     justify-content: space-between;
+     margin: 0 auto;
+     align-items: center;
+
+     .headerRight{
+        display: flex;
+        height: 38px;
+        align-items: center;
+        gap: 12px;
+
+        .iconCart{
+            color:$yellow-800 ;
+            cursor: pointer;
+        }
+
+        .cart{
+            display: flex;
+            height: 100%;
+            width: 38px;
+            align-items: center;
+            justify-content: center;
+            background-color: $yellow-100;
+            border-radius: 6px;
+        }
+
+        .localizationContent{
+            background-color: $purple-100;
+            color: $purple-800;
+            border-radius: 4px;
+            height: 100%;
+            width: 9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+
+        }
+
+     }
+
+
+    
+    
+}
