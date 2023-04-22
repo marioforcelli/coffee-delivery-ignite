@@ -21,6 +21,7 @@ module.exports = {
     '@typescript-eslint'
   ],
   'rules': {
+    'react/prop-types': 'off',
     'quotes': ['error', 'single'],
     // we want to force semicolons
     // we use 2 spaces to indent our code

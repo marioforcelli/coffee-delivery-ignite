@@ -7,11 +7,17 @@ import CoffeCard from '../CoffeeCard/CoffeCard'
 export default function CoffeeList(){
   return (
     <div className={styles.coffeListContainer}> 
-      {coffees.map((i) =>{
-        return(
-          <CoffeCard key={i.id} coffee={i}/>
-        )
-      })}
+      <div className={styles.sectionTitle}>
+        <h1>Nossos cafés</h1>
+      </div>
+      <div className={styles.coffeeList}>
+        {coffees.map((i) =>{
+          return(
+            <CoffeCard key={i.id} coffee={i}/>
+          )
+        })}
+      </div>
+      
 
     </div>
   )

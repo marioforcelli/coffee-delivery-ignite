@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.scss'
 import formatPrice from '../../helpers/formatPrice'
+import QuantityInput from '../QuantityInput/QuantityInput'
+import {ShoppingCart} from 'phosphor-react'
 
 
 interface CoffeeProps {
@@ -18,6 +20,8 @@ interface Coffee {
 }
 
 export default function CoffeCard({coffee }: Coffee ){
+
+  const [quantityInput, setQuantityInput] = useState(1)
   return (
     <> 
 
@@ -28,7 +32,7 @@ export default function CoffeCard({coffee }: Coffee ){
           </div>
           <div className={styles.tags}>
             {coffee.tags.map((tag=>{
-              return(<span className={styles.tagDescription} key={`${coffee.id}_tag`}>{tag}</span>)
+              return(<span className={styles.tagDescription} key={`${coffee.id}_tag_${coffee.title}`}>{tag}</span>)
             }))}
           </div> 
           <div className={styles.titleArea}>
@@ -41,8 +45,14 @@ export default function CoffeCard({coffee }: Coffee ){
             <div>
               <span className={styles.coin}>R$</span>
               <span className={styles.price}> {formatPrice(coffee.price)}</span> </div>
-            <div>
-              <input type='number'/>
+            <div className={styles.rightBottom}>
+              <QuantityInput 
+                onMinus={() => setQuantityInput(quantityInput -1)} 
+                onPlus={() => setQuantityInput(quantityInput + 1)} 
+                quantity={quantityInput}/>
+              <button className={styles.cartIcon}>
+                <ShoppingCart size={22} weight='fill' color='white'/>
+              </button>
             </div>
           </div>
         </div>

@@ -2,9 +2,21 @@
 
 
 .coffeListContainer{
-    margin: 5rem auto;
+    
     max-width: 70rem;
+    margin: 2rem auto;
+
+    h1{
+        font-family: 'Baloo 2', cursive;
+        font-size: $text-32;
+    }
+}
+
+.coffeeList{
+    margin-top: 3.75rem;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    
+    
 }
