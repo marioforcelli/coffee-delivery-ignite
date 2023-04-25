@@ -1,0 +1,63 @@
+@import '../../../styles/global.scss'; 
+
+.addressFormContainer{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 70rem;   
+}
+
+.container{
+    background-color: $gray-100;
+    padding: 2.5rem;
+    width: 40rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.375rem;
+    
+    h2 {
+        font-size: $text-14;
+    }
+    
+    h3 { 
+        font-size: $text-12;
+        margin-left: 2rem;
+    }
+
+    svg {
+        margin-right: 0.5rem;
+    }
+}
+
+
+
+.formTitle{
+    display: flex;
+    background-color: $gray-100;
+    align-items: center;
+    
+
+}
+
+
+
+h2,h3{
+    color: $gray-700;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+.formWrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 2rem ;
+
+}
+
+
+.formrow{
+    display: flex;
+    gap : 0.75rem
+}

@@ -1,18 +1,19 @@
 import React from 'react'
-import Header from './components/Header/Header'
 import './styles/global.scss'
-import Intro from './components/Intro/Intro'
-import CoffeeList from './components/CoffeeList/CoffeeList'
+import { BrowserRouter, Outlet} from 'react-router-dom';
+import AppRoutes from './routes/index';
+import Header from './components/Header/Header';
+
 
 function App() {
 
   return (
     <>
       <Header/>
-      <Intro/>
-      <CoffeeList/>
+      <AppRoutes/>
     </>
   )
+
 }
 
 export default App

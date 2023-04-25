@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './styles.module.scss'
-import formatPrice from '../../helpers/formatPrice'
+import formatPrice from '../../../helpers/formatPrice'
 import QuantityInput from '../QuantityInput/QuantityInput'
 import {ShoppingCart} from 'phosphor-react'
 

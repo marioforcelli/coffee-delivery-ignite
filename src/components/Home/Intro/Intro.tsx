@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'
 import React from 'react'
-import coffeIntro from '../../assets/coffee-intro.png'
+import coffeIntro from '../../../assets/coffee-intro.png'
 
 import { ShoppingCart, Timer, Package, Coffee } from 'phosphor-react'
 

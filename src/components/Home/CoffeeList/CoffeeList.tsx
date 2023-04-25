@@ -1,5 +1,5 @@
 import React from 'react'
-import {coffees} from '../../assets/coffees'
+import {coffees} from '../../../assets/coffees'
 import styles from './styles.module.scss'
 import CoffeCard from '../CoffeeCard/CoffeCard'
 
