@@ -1,4 +1,4 @@
-import CompleteOrderForm from '../components/AddressOrderForm/CompleteOrderForm/CompleteOrderForm';
+import CompleteOrderForm from '../components/CompleteOrder/CompleteOrderForm/CompleteOrderForm';
 import TextInput from '../components/TextInput/TextInput';
 
 export default function CompleteOrder(){

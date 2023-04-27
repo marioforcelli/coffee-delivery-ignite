@@ -20,10 +20,12 @@ export default function PaymentMethodSelect(){
   return (
 
     <form className={styles.radioInputForm}>
+
+
       <div className={styles.option}>
         <input onChange={handleChange} id="credit" type='radio' value={PAYMENT_METHOD_CREDIT} checked={ selectedOption === PAYMENT_METHOD_CREDIT}/>
         <label htmlFor="credit" className={styles.method}>
-          <div>
+          <div className={styles.method}>
             <CreditCard size={16} color='#8047F8'/>
         Cartão de crédito</div>
 
@@ -45,7 +47,7 @@ export default function PaymentMethodSelect(){
       <div className={styles.option}>
         <input onChange={handleChange} id="cash" type='radio' value={PAYMENT_METHOD_CASH} checked={ selectedOption === PAYMENT_METHOD_CASH }/>
         <label htmlFor="cash" className={styles.method} >
-          <div>
+          <div className={styles.method}>
             <Money size={16} color='#8047F8' />
            Dinheiro
           </div>

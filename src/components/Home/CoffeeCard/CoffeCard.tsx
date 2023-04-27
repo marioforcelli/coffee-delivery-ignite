@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './styles.module.scss'
 import formatPrice from '../../../helpers/formatPrice'
 import QuantityInput from '../QuantityInput/QuantityInput'
 import {ShoppingCart} from 'phosphor-react'
+import { CartContext } from '../../../contexts/cart'
 
 
-interface CoffeeProps {
+export interface CoffeeProps {
     id: number,
     title: string,
     tags: string[],
@@ -21,7 +22,17 @@ interface Coffee {
 
 export default function CoffeCard({coffee }: Coffee ){
 
+  const { addToCart } = useContext(CartContext)
   const [quantityInput, setQuantityInput] = useState(1)
+
+
+  const handleClick = () =>{
+    console.log(coffee)
+    addToCart({
+      ...coffee,
+      quantity: quantityInput
+    })
+  }
   return (
     <> 
 
@@ -31,8 +42,8 @@ export default function CoffeCard({coffee }: Coffee ){
             <div style={{background: `url(${coffee.image}) no-repeat top`, position: 'absolute'}} className={styles.topImg}/>
           </div>
           <div className={styles.tags}>
-            {coffee.tags.map((tag=>{
-              return(<span className={styles.tagDescription} key={`${coffee.id}_tag_${coffee.title}`}>{tag}</span>)
+            {coffee.tags.map(((tag, index)=>{
+              return(<span className={styles.tagDescription} key={index}>{tag}</span>)
             }))}
           </div> 
           <div className={styles.titleArea}>
@@ -51,7 +62,7 @@ export default function CoffeCard({coffee }: Coffee ){
                 onPlus={() => setQuantityInput(quantityInput + 1)} 
                 quantity={quantityInput}/>
               <button className={styles.cartIcon}>
-                <ShoppingCart size={22} weight='fill' color='white'/>
+                <ShoppingCart onClick={handleClick} size={22} weight='fill' color='white'/>
               </button>
             </div>
           </div>

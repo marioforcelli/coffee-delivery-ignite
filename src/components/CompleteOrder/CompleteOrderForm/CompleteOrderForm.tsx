@@ -1,7 +1,7 @@
 import { MapPinLine , CurrencyDollar} from 'phosphor-react'
 import styles from './styles.module.scss'
 import TextInput from '../../TextInput/TextInput'
-import PaymentMethodSelect from '../PaymentMethodSelect/PaymentMethodSelect'
+import PaymentMethodSelect from './../PaymentMethodSelect/PaymentMethodSelect'
 import { FormProvider, useForm } from 'react-hook-form'
 
 export default function CompleteOrderForm() {
