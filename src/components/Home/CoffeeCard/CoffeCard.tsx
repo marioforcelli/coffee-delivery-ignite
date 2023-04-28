@@ -16,7 +16,7 @@ export interface CoffeeProps {
 
 }
 
-interface Coffee {
+export interface Coffee {
     coffee : CoffeeProps
 }
 
@@ -58,6 +58,7 @@ export default function CoffeCard({coffee }: Coffee ){
               <span className={styles.price}> {formatPrice(coffee.price)}</span> </div>
             <div className={styles.rightBottom}>
               <QuantityInput 
+                heightRem='0.375'
                 onMinus={() => setQuantityInput(quantityInput -1)} 
                 onPlus={() => setQuantityInput(quantityInput + 1)} 
                 quantity={quantityInput}/>

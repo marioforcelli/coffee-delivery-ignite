@@ -1,0 +1,27 @@
+@import '../../styles/global.scss';
+
+
+.container{
+    background-color:$gray-300;
+    border-radius: 6px;
+    height: 100%;
+    
+
+    .removeBtn {
+        display: flex;
+        font-weight: 400;
+        align-items: center;
+        padding: 0 0.5rem;
+        border-radius: 6px;
+        line-height: 160%;
+        color: $gray-600;
+        font-size: $text-12;
+        border: none;
+        height: 100%;
+
+        svg{ 
+            margin-right: 0.25rem;
+        }
+    }
+
+}

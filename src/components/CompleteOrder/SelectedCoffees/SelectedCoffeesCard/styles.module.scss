@@ -1,0 +1,41 @@
+@import '../../../../styles/global.scss';
+
+
+.coffeList{
+    display: flex;
+    flex-direction: column;
+    .coffeeImg{
+        width: 4rem;
+        height: 4rem;
+       
+    }
+
+    .coffeeItem{
+        border-bottom: 1px solid $gray-300;
+    }
+
+    .coffeeContent{
+        display: flex;
+        margin: 1.5rem 0;
+        justify-content: space-around;
+        width: 23rem;
+        
+        
+    }
+
+    .coffeeDetail{
+        display: flex;
+        flex-direction: column;   
+        gap: 0.5rem;
+
+    }
+
+    .buttons{
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    
+
+
+}

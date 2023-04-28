@@ -2,14 +2,16 @@ import { ContextType, ReactComponentElement, ReactNode, createContext, useState 
 import { CoffeeProps } from '../../components/Home/CoffeeCard/CoffeCard';
 
 
-interface CartItemProps extends CoffeeProps {
+export interface CartItemProps extends CoffeeProps {
     quantity: number
 }
 
 interface CartProviverProps {
-    items?: CartItemProps[]
     totalItems: number,
     addToCart : (coffee: CartItemProps) => void
+    removeFromCart : (coffee: CartItemProps) => void
+    updateCartItem : (coffee: CartItemProps, newQuantity: number) => void
+    itemCart: CartItemProps[]
  }
 
  interface CartContextProviderProps {
@@ -44,8 +46,32 @@ function CartContextProvider({children}: CartContextProviderProps) {
     }
   }
 
+
+  const removeFromCart = ( coffee : CartItemProps) =>{
+    const newCoffee = itemCart.filter((i)=>{
+      if(coffee.id !== i.id) {
+        return {...i}
+      } 
+      
+
+    })
+    setItemCart(newCoffee)  
+  }
+
+  const updateCartItem = (coffee: CartItemProps, newQuantity : number) => {
+    const newCoffee = itemCart.map((i)=>{
+      if(coffee.id === i.id) {
+        return {...i, quantity: newQuantity}
+      } 
+      
+      return {...i}
+
+    })
+    setItemCart(newCoffee)
+  }
+
   return(
-    <CartContext.Provider value={{addToCart, totalItems}}>
+    <CartContext.Provider value={{addToCart, totalItems, itemCart, removeFromCart, updateCartItem}}>
       {children}
     </CartContext.Provider>
   )

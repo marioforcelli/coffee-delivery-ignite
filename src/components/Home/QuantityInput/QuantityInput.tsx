@@ -5,15 +5,16 @@ import styles from './styles.module.scss'
 
 interface QuantityInputProps {
     quantity : number,
+    heightRem : string,
     onMinus : () => void
     onPlus : () => void
 }
 
 
 
-export default function QuantityInput({quantity, onMinus, onPlus}: QuantityInputProps){
+export default function QuantityInput({quantity, onMinus, onPlus, heightRem}: QuantityInputProps){
   return (
-    <div className={styles.inputContainer}>
+    <div style={{height: `${heightRem}`}} className={styles.inputContainer}>
       <button onClick={onMinus} disabled={quantity <= 1} className={styles.iconArea}>
         <Minus size={14} color={'#8047F8'}/>
       </button>
