@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styles from './styles.module.scss'
-import {PAYMENT_METHOD_CASH, PAYMENT_METHOD_DEBIT, PAYMENT_METHOD_CREDIT} from '../../../constants/paymentsMethods'
+import {PAYMENT_METHOD_CASH, PAYMENT_METHOD_DEBIT, PAYMENT_METHOD_CREDIT} from '../../../constants'
 import {useFormContext} from 'react-hook-form'
 import {CreditCard, Bank, Money} from 'phosphor-react'
 
@@ -8,7 +8,7 @@ import {CreditCard, Bank, Money} from 'phosphor-react'
 export default function PaymentMethodSelect(){
   const [selectedOption, setSelectedOption] = useState('')
 
-  const { register, setValue, handleSubmit } = useFormContext()
+  const { setValue } = useFormContext()
   
   const handleChange = (e : React.FormEvent<HTMLInputElement>) => {setSelectedOption((e.target as HTMLTextAreaElement).value) 
     setValue('paymentMethods', selectedOption)

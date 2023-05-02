@@ -1,6 +1,5 @@
 import headerLogo from '../../assets/header-logo.png'
 import styles from './styles.module.scss'
-import React from 'react'
 import { ShoppingCart, MapPin } from 'phosphor-react'
 import { Link } from 'react-router-dom'
 

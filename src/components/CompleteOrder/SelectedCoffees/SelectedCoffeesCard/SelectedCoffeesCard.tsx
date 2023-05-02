@@ -3,8 +3,6 @@
 import styles from './styles.module.scss'
 import QuantityInput from '../../../Home/QuantityInput/QuantityInput'
 import RemoveButton from '../../../RemoveButton/RemoveButton'
-import formatPrice from '../../../../helpers/formatPrice'
-import { Coffee } from '../../../Home/CoffeeCard/CoffeCard'
 import { CartContext, CartItemProps } from '../../../../contexts/cart/index'
 import { useContext } from 'react'
 
@@ -15,7 +13,7 @@ interface SelectedCoffeesProps{
 
 export default function SelectedCoffeesCard ({coffee}: SelectedCoffeesProps) {
 
-  const { removeFromCart, updateCartItem } = useContext(CartContext)
+  const { removeFromCart, updateQuantityItem, itemSum } = useContext(CartContext)
 
 
 
@@ -24,11 +22,11 @@ export default function SelectedCoffeesCard ({coffee}: SelectedCoffeesProps) {
   }
 
   const handlePlus = () => {
-    updateCartItem(coffee, coffee.quantity + 1)
+    updateQuantityItem(coffee, coffee.quantity + 1)
   }
 
   const handleMinus = () => {
-    updateCartItem(coffee, coffee.quantity - 1)
+    updateQuantityItem(coffee, coffee.quantity - 1)
   }
 
   return (
@@ -47,7 +45,7 @@ export default function SelectedCoffeesCard ({coffee}: SelectedCoffeesProps) {
             
                 
           </div>
-          <div>R${formatPrice(coffee.price)}</div>
+          <div>R${itemSum(coffee)}</div>
         </div>
       </div>
     

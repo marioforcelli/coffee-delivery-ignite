@@ -1,8 +1,6 @@
 
 import {Trash } from 'phosphor-react'
 import styles from './style.module.scss'
-import { Coffee, CoffeeProps } from '../Home/CoffeeCard/CoffeCard'
-import { CartItemProps } from '../../contexts/cart'
 
 interface RemoveButton { 
   handleClick: () => void

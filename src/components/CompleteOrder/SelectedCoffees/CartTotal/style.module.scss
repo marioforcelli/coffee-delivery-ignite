@@ -1,0 +1,28 @@
+@import '../../../../styles/global.scss';
+
+
+.container{
+    margin-top: 1.5rem;
+    display: flex;
+    
+    flex-direction: column;
+    gap: 0.75rem;
+
+    
+}
+
+.container > div {
+
+    display: flex;
+    justify-content: space-between;
+    font-size: $text-14 ;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: $gray-600;
+}
+
+.total h2{
+    color: $gray-700;
+    font-weight: 700;
+    font-size: $text-20;
+}
