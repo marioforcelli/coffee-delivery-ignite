@@ -1,9 +1,9 @@
 
-import SelectedCoffeesCard from '../../../components/CompleteOrder/SelectedCoffees/SelectedCoffeesCard/SelectedCoffeesCard';
+import SelectedCoffeesCard from '../../../components/CompleteOrderForm/SelectedCoffees/SelectedCoffeesCard/SelectedCoffeesCard';
 import { CartContext } from '../../../contexts/cart/index'
 import { useContext } from 'react'
 import CartTotal from './CartTotal/CartTotal';
-
+import styles from './styles.module.scss'
 
 export default function SelectedCoffees ( ) {
 
@@ -11,7 +11,7 @@ export default function SelectedCoffees ( ) {
 
   return (
     totalItems ? 
-      <div>
+      <div className={styles.container}>
       
         { totalItems > 0 && 
        itemCart.map((i, index) =>{

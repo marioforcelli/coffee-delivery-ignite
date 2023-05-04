@@ -80,7 +80,7 @@ function CartContextProvider({children}: CartContextProviderProps) {
   const sumTotal = (deliveryFee: boolean) => {
     if(deliveryFee){
       return itemCart.reduce((acc , current) =>{
-        return Number(acc) + (current.price * current.quantity)
+        return acc + (current.price * current.quantity)
       }, DELIVERY_FEE_VALUE)
 
     } else {
