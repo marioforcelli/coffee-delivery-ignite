@@ -39,3 +39,10 @@
     color: $gray-500;
     margin-right: 0.75rem;
 }
+
+.errorMessage{
+    font-size: $text-10;
+    color: red;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}

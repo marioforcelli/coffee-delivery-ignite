@@ -1,18 +1,23 @@
+import { InputHTMLAttributes, forwardRef } from 'react'
 import styles from './styles.module.scss'
 
 
-export interface TextInputProps {
-    width?: number,
+export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
+
     isOptional?: boolean,
-    placeholder : string
+    error? : string
+
 }
 
-export default function TextInput( {width = 12.5, isOptional = false, placeholder} : TextInputProps
-){
+// eslint-disable-next-line react/display-name
+export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(({width = 12.5, isOptional = false, placeholder, error, ...props }, ref) =>{
   return(
-    <div style={{width : `${width}rem`}} className={styles.textInputArea}> 
-      <input placeholder={placeholder} className={styles.textInput} type="text" />
-      {isOptional ? <p className={styles.rightInputText}>Optional</p>: null}
+    <div>
+      <div style={{width : `${width}rem`}} className={styles.textInputArea}> 
+        <input ref={ref} {...props} placeholder={placeholder} className={styles.textInput} />
+        {isOptional ? <p className={styles.rightInputText}>Optional</p>: null}
+      </div>
+      { error && <p className={styles.errorMessage}>{error}</p> }
     </div>
   )
-}
+})

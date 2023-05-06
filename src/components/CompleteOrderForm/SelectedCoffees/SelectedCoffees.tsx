@@ -5,6 +5,10 @@ import { useContext } from 'react'
 import CartTotal from './CartTotal/CartTotal';
 import styles from './styles.module.scss'
 
+
+
+
+
 export default function SelectedCoffees ( ) {
 
   const { itemCart, totalItems} = useContext(CartContext)
@@ -20,6 +24,8 @@ export default function SelectedCoffees ( ) {
          )
        })}
         <CartTotal/>
+
+        <button type='submit' className={styles.submitBtn}>Confirmar Pedido</button>
       </div>
 
       : 

@@ -3,16 +3,19 @@ import styles from './styles.module.scss'
 import {PAYMENT_METHOD_CASH, PAYMENT_METHOD_DEBIT, PAYMENT_METHOD_CREDIT} from '../../../constants'
 import {useFormContext} from 'react-hook-form'
 import {CreditCard, Bank, Money, CurrencyDollar} from 'phosphor-react'
+import { ErrorsType } from '../AddressForm/AddressForm'
 
 
 export default function PaymentMethodSelect(){
   const [selectedOption, setSelectedOption] = useState('')
 
-  const { setValue } = useFormContext()
+  const { setValue, getValues, formState } = useFormContext()
+
+  const { errors } = formState as ErrorsType
   
   const handleChange = (e : React.FormEvent<HTMLInputElement>) => {setSelectedOption((e.target as HTMLTextAreaElement).value) 
     setValue('paymentMethods', selectedOption)
-    console.log(e.target)
+    console.log(!selectedOption)
   }
   
 
@@ -31,7 +34,7 @@ export default function PaymentMethodSelect(){
         O pagamento é feito na entrega. Escolha a forma que deseja pagar
       </h3>
 
-      <form className={styles.radioInputForm}>
+      <div className={styles.radioInputForm}>
 
 
         <div className={styles.option}>
@@ -67,9 +70,12 @@ export default function PaymentMethodSelect(){
           </label>
         </div>
 
+        
 
 
-      </form>
+
+      </div>
+      { !selectedOption && <p className={styles.errorMessage}>{errors.paymentMethods?.message}</p> }
 
     </div>
         
