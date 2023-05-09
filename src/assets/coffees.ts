@@ -1,4 +1,17 @@
 import americano from './americano.png'
+import expresso from './expresso.png'
+import expresso_cremoso from './expresso_cremoso.png'
+import expresso_gelado from './cafe_gelado.png'
+import cafe_com_leite from './cafe_com_Leite.png'
+import latte from './latte.png'
+import cappucino from './capuccino.png'
+import macchiato from './macchiato.png'
+import mochaccino from './mochaccino.png'
+import chocolate_quente from './choc_quente.png'
+import cubano from './cubano.png'
+import havaiano from './havaiano.png'
+import arabe from './arabe.png'
+import irlandes from './irlandes.png'
 
 
 export const coffees = [
@@ -13,7 +26,7 @@ export const coffees = [
   {
     id: 2,
     title: 'Expresso Americano',
-    image : 'src/assets/americano.png',
+    image : expresso,
     description : 'Expresso diluído, menos intenso que o tradicional',
     tags : ['Tradicional'],
     price: 9.90
@@ -21,7 +34,7 @@ export const coffees = [
   {
     id: 3,
     title: 'Expresso Cremoso',
-    image : 'src/assets/expresso_cremoso.png',
+    image : expresso_cremoso,
     description : 'Café expresso tradicional com espuma cremosa',
     tags : ['Tradicional'],
     price: 9.90
@@ -29,7 +42,7 @@ export const coffees = [
   {
     id: 4,
     title: 'Expresso Gelado',
-    image : 'src/assets/cafe_gelado.png',
+    image : expresso_gelado,
     description : 'Bebida preparada com café expresso e cubos de gelo',
     tags : ['Tradicional', 'Gelado'],
     price: 9.90
@@ -37,7 +50,7 @@ export const coffees = [
   {
     id: 5,
     title: 'Café com Leite',
-    image : 'src/assets/cafe_com_Leite.png',
+    image : cafe_com_leite,
     description : 'Meio a meio de expresso tradicional com leite vaporizado',
     tags : ['Tradicional', 'com leite'],
     price: 9.90
@@ -45,15 +58,15 @@ export const coffees = [
   {
     id: 6,
     title: 'Latte',
-    image : 'src/assets/latte.png',
+    image : latte,
     description : 'Uma dose de café expresso com o dobro de leite e espuma cremosa',
     tags : ['Tradicional', 'com leite'],
     price: 9.90
   },
   {
     id: 7,
-    title: 'Capuccino',
-    image : 'src/assets/capuccino.png',
+    title: 'Cappucino',
+    image : cappucino,
     description : 'Bebida com canela feita de doses iguais de café, leite e espuma',
     tags : ['Tradicional', 'com leite'],
     price: 9.90
@@ -61,7 +74,7 @@ export const coffees = [
   {
     id: 8,
     title: 'Macchiato',
-    image : 'src/assets/macchiato.png',
+    image : macchiato,
     description : 'Café expresso misturado com um pouco de leite quente e espuma',
     tags : ['Tradicional', 'com leite'],
     price: 9.90
@@ -69,7 +82,7 @@ export const coffees = [
   {
     id: 9,
     title: 'Mocaccino',
-    image : 'src/assets/mochaccino.png',
+    image : mochaccino,
     description : 'Café expresso com calda de chocolate, pouco leite e espuma',
     tags : ['Tradicional', 'com leite'],
     price: 9.90
@@ -77,7 +90,7 @@ export const coffees = [
   {
     id: 10,
     title: 'Chocolate Quente',
-    image : 'src/assets/choc_quente.png',
+    image : chocolate_quente,
     description : 'Bebida feita com chocolate dissolvido no leite quente e café',
     tags : ['especial', 'com leite'],
     price: 9.90
@@ -85,7 +98,7 @@ export const coffees = [
   {
     id: 11,
     title: 'Cubano',
-    image : 'src/assets/cubano.png',
+    image : cubano,
     description : 'Drink gelado de café expresso com rum, creme de leite e hortelã',
     tags : ['especial', 'alcoólico', 'gelado'],
     price: 9.90
@@ -93,7 +106,7 @@ export const coffees = [
   {
     id: 12,
     title: 'Havaiano',
-    image : 'src/assets/havaiano.png',
+    image : havaiano,
     description : 'Bebida adocicada preparada com café e leite de coco',
     tags : ['especial'],
     price: 9.90
@@ -101,7 +114,7 @@ export const coffees = [
   {
     id: 13,
     title: 'Árabe',
-    image : 'src/assets/arabe.png',
+    image : arabe,
     description : 'Bebida preparada com grãos de café árabe e especiarias',
     tags : ['especial'],
     price: 9.90
@@ -109,7 +122,7 @@ export const coffees = [
   {
     id: 15,
     title: 'Irlandês',
-    image : 'src/assets/irlandes.png',
+    image : irlandes,
     description : 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
     tags : ['especial', 'alcoólico'],
     price: 9.90
