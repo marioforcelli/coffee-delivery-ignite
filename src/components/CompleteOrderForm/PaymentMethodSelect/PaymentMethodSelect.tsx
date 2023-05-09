@@ -9,16 +9,13 @@ import { ErrorsType } from '../AddressForm/AddressForm'
 export default function PaymentMethodSelect(){
   const [selectedOption, setSelectedOption] = useState('')
 
-  const { setValue, getValues, formState } = useFormContext()
+  const { formState, register } = useFormContext()
 
   const { errors } = formState as ErrorsType
   
-  const handleChange = (e : React.FormEvent<HTMLInputElement>) => {setSelectedOption((e.target as HTMLTextAreaElement).value) 
-    setValue('paymentMethods', selectedOption)
-    console.log(!selectedOption)
-  }
+  const handleClick = (e : React.FormEvent<HTMLInputElement>) => setSelectedOption((e.target as HTMLTextAreaElement).value) 
   
-
+  
 
   return (
 
@@ -36,9 +33,9 @@ export default function PaymentMethodSelect(){
 
       <div className={styles.radioInputForm}>
 
-
+        
         <div className={styles.option}>
-          <input onChange={handleChange} id="credit" type='radio' value={PAYMENT_METHOD_CREDIT} checked={ selectedOption === PAYMENT_METHOD_CREDIT}/>
+          <input onClick={handleClick} {...register('...paymentMethods')} id="credit" type='radio' value={PAYMENT_METHOD_CREDIT} checked={ selectedOption === PAYMENT_METHOD_CREDIT}/>
           <label htmlFor="credit" className={styles.method}>
             <div className={styles.method}>
               <CreditCard size={16} color='#8047F8'/>
@@ -48,7 +45,7 @@ export default function PaymentMethodSelect(){
         </div>
 
         <div className={styles.option} >
-          <input onChange={handleChange} id="debit" type='radio' value={PAYMENT_METHOD_DEBIT} checked={ selectedOption === PAYMENT_METHOD_DEBIT }/>
+          <input onClick={handleClick} {...register('...paymentMethods')} id="debit" type='radio' value={PAYMENT_METHOD_DEBIT} checked={ selectedOption === PAYMENT_METHOD_DEBIT }/>
           <label htmlFor="debit" className={styles.method} >
             <div className={styles.method} >
               <Bank size={16} color='#8047F8'/>
@@ -60,7 +57,7 @@ export default function PaymentMethodSelect(){
         </div>
 
         <div className={styles.option}>
-          <input onChange={handleChange} id="cash" type='radio' value={PAYMENT_METHOD_CASH} checked={ selectedOption === PAYMENT_METHOD_CASH }/>
+          <input onClick={handleClick} {...register('...paymentMethods')} id="cash" type='radio' value={PAYMENT_METHOD_CASH} checked={ selectedOption === PAYMENT_METHOD_CASH }/>
           <label htmlFor="cash" className={styles.method} >
             <div className={styles.method}>
               <Money size={16} color='#8047F8' />
@@ -71,8 +68,6 @@ export default function PaymentMethodSelect(){
         </div>
 
         
-
-
 
       </div>
       { !selectedOption && <p className={styles.errorMessage}>{errors.paymentMethods?.message}</p> }
