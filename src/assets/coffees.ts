@@ -1,8 +1,11 @@
+import americano from './americano.png'
+
+
 export const coffees = [
   {
     id: 1,
     title: 'Expresso Tradicional',
-    image : 'src/assets/expresso.png',
+    image : americano,
     description : 'O tradicional café feito com água quente e grãos moídos',
     tags : ['Tradicional'],
     price: 9.90
