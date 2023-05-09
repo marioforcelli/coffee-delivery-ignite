@@ -31,7 +31,7 @@ export default function CompleteOrderForm () {
   return (
     <FormProvider {...confirmOrderForm} >
 
-      <form onSubmit={handleSubmit(console.log(errors))}> 
+      <form> 
         <div className={styles.formContainer}>
           <div className={styles.formLeft}>
             <AddressForm />
