@@ -5,7 +5,7 @@ import AddressForm from './AddressForm/AddressForm';
 import styles from './styles.module.scss'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 export default function CompleteOrderForm () {

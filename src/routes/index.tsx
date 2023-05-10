@@ -8,7 +8,7 @@ export default function AppRoutes(){
     <Routes>
       <Route element={<Home/>} path='/'/>
       <Route element={<CompleteOrder/>} path='/complete-order'/>
-      <Route element={<ConfirmedOrder/>} path='confirmed-order'/>
+      <Route element={ <ConfirmedOrder/>} path='confirmed-order'/>
     </Routes>
   )
 }

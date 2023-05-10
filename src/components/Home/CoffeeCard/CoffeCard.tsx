@@ -62,8 +62,8 @@ export default function CoffeCard({coffee }: Coffee ){
                 onMinus={() => setQuantityInput(quantityInput -1)} 
                 onPlus={() => setQuantityInput(quantityInput + 1)} 
                 quantity={quantityInput}/>
-              <button className={styles.cartIcon}>
-                <ShoppingCart onClick={handleClick} size={22} weight='fill' color='white'/>
+              <button onClick={handleClick} className={styles.cartIcon}>
+                <ShoppingCart size={22} weight='fill' color='white'/>
               </button>
             </div>
           </div>
