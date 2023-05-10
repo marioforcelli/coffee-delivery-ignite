@@ -5,10 +5,12 @@ import AddressForm from './AddressForm/AddressForm';
 import styles from './styles.module.scss'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 
 export default function CompleteOrderForm () {
 
+  const navigate = useNavigate()
 
   const addressSchema = yup.object({
     cep: yup.string().required('CEP não pode ser vazio'),
@@ -25,13 +27,30 @@ export default function CompleteOrderForm () {
 
   const confirmOrderForm = useForm({resolver : yupResolver(addressSchema)})
 
+  
 
-  const {handleSubmit, formState:{errors}, getValues} = confirmOrderForm
+  const formSubmit = () => {
+
+    navigate('/confirmed-order', {
+      state: {
+        street: watchFields.street,
+        number: watchFields.number,
+        state: watchFields.state,
+        city: watchFields.city,
+        paymentMethods: watchFields.paymentMethods,
+        neighborhood: watchFields.neighborhood
+
+      } })
+  }
+
+
+  const {handleSubmit, watch } = confirmOrderForm
+  const watchFields = watch()
 
   return (
     <FormProvider {...confirmOrderForm} >
 
-      <form> 
+      <form onSubmit={handleSubmit(formSubmit)}> 
         <div className={styles.formContainer}>
           <div className={styles.formLeft}>
             <AddressForm />
