@@ -1,4 +1,4 @@
-import { MapPinLine , CurrencyDollar} from 'phosphor-react'
+import { MapPinLine } from 'phosphor-react'
 import styles from './styles.module.scss'
 import {TextInput} from '../../TextInput/TextInput'
 import { useFormContext} from 'react-hook-form'
