@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home';
-import CompleteOrder from '../pages/CompleteOrder';
-import ConfirmedOrder from '../pages/ConfirmedOrderPage'
+import Home from '../pages/Home/Home';
+import CompleteOrder from '../pages/CompleteOrder/CompleteOrder';
+import ConfirmedOrder from '../pages/ConfirmedOrder/ConfirmedOrderPage'
 
 export default function AppRoutes(){
   return(

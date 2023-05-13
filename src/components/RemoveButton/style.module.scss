@@ -18,10 +18,13 @@
         font-size: $text-12;
         border: none;
         height: 100%;
+        transition: all ease-in-out 0.1s;
 
         svg{ 
             margin-right: 0.25rem;
         }
     }
+
+
 
 }

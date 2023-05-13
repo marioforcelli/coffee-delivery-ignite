@@ -3,8 +3,9 @@
 .inputContainer{
     width: 4.5rem;
     border-radius: 0.25rem;
-    background-color: $gray-300;
     display: flex;
+    background-color: #e6e5e5;
+
 
     input{
         background-color: $gray-300;
@@ -15,7 +16,10 @@
         outline: none;
         border: 0;
         text-align: center;
+
+
     }
+
 
 }
 
@@ -27,8 +31,11 @@
     align-items: center;
     justify-content: center;
     background-color: $gray-300;
+
 }
 
 button {
     cursor: pointer;
+
+
 }

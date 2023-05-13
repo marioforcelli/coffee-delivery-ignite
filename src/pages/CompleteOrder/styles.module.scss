@@ -1,0 +1,43 @@
+@import '../../styles/global.scss';
+
+
+.formContainer{
+
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 70rem;   
+    display: flex;
+    gap: 2rem;
+
+    h2 {
+        font-size: $text-16;
+    }
+    
+    h3 { 
+        font-size: $text-14;
+        margin-left: 2rem;
+    }
+
+    h2,h3{
+        color: $gray-700;
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+
+}
+
+.formLeft > div  {
+    svg  {
+        margin-right: 0.5rem;
+    }
+}
+
+
+.formTitle{
+
+    font-size: $text-18;
+    font-family: 'Baloo 2' , monospace;
+    margin-bottom: 15px;
+    margin-top: 40px;
+}

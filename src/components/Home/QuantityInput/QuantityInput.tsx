@@ -15,11 +15,11 @@ interface QuantityInputProps {
 export default function QuantityInput({quantity, onMinus, onPlus, heightRem}: QuantityInputProps){
   return (
     <div style={{height: `${heightRem}`}} className={styles.inputContainer}>
-      <button onClick={onMinus} disabled={quantity <= 1} className={styles.iconArea}>
+      <button type='button' onClick={onMinus} disabled={quantity <= 1} className={styles.iconArea}>
         <Minus size={14} color={'#8047F8'}/>
       </button>
       <input type='number' readOnly value={quantity} />
-      <button onClick={onPlus} className={styles.iconArea}>
+      <button type='button' onClick={onPlus} className={styles.iconArea}>
         <Plus size={14} color={'#8047F8'}/>
       </button>
     </div>

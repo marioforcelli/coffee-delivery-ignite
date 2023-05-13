@@ -107,20 +107,22 @@
     gap: 0.5rem;
 }
 
-.cartIcon{
+.cartIcon { 
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 2.375rem;
-    height: 2.375rem;
-    background-color: $purple-800;
-    border-radius: 6px;
-    outline: none;
+    padding: 0.5rem;
+    outline: 0;
     border: 0;
-    cursor: pointer;
+    border-radius: 6px;
+    background-color: $purple-800;
+    transition: all ease-in-out 0.1s;
+
 }
 
-
+.cartIcon:hover{
+           background-color: $purple-400;        
+}
 
 
 

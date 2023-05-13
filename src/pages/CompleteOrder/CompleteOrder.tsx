@@ -1,7 +1,7 @@
 import { FormProvider, useForm } from 'react-hook-form';
-import SelectedCoffees from './SelectedCoffees/SelectedCoffees';
-import PaymentMethodSelect from './PaymentMethodSelect/PaymentMethodSelect';
-import AddressForm from './AddressForm/AddressForm';
+import SelectedCoffees from '../../components/CompleteOrderForm/SelectedCoffees/SelectedCoffees'
+import PaymentMethodSelect from '../../components/CompleteOrderForm/PaymentMethodSelect/PaymentMethodSelect';
+import AddressForm from '../../components/CompleteOrderForm/AddressForm/AddressForm';
 import styles from './styles.module.scss'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup'
@@ -53,11 +53,13 @@ export default function CompleteOrderForm () {
       <form onSubmit={handleSubmit(formSubmit)}> 
         <div className={styles.formContainer}>
           <div className={styles.formLeft}>
+            <h1 className={styles.formTitle}>Complete seu pedido</h1>
             <AddressForm />
             <PaymentMethodSelect/>
           </div>
 
           <div className={styles.rightForm}>
+            <h1 className={styles.formTitle}>Cafés selecionados</h1>
             <SelectedCoffees />
           </div>
         </div>

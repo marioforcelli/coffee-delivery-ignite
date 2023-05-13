@@ -27,11 +27,11 @@ export default function ConfirmedOrder() {
               <p>
             Entrega em
                 <strong>
-                  {` ${location.state?.street}, `} 
-                  {location.state?.number}
+                  {` ${location.state.street}, `} 
+                  {location.state.number}
                 </strong> 
                 <br/> 
-                {location.state?.neighborhood} - {`${location.state?.city}, `} {location.state?.state}
+                {location.state.neighborhood} - {`${location.state.city}, `} {location.state.state}
               </p>
             </div>
 
@@ -52,11 +52,11 @@ export default function ConfirmedOrder() {
             
               <p>
                 Pagamento na entrega <br/>
-                <strong>Cartao de credito</strong>
+                <strong>{location.state.paymentMethods}</strong>
               </p>
             </div>
 
-            {location.state?.cep}
+            {location.state.cep}
           </div>
         </div>
         <div className={styles.right}>

@@ -11,21 +11,23 @@ import styles from './styles.module.scss'
 
 export default function SelectedCoffees ( ) {
 
-  const { itemCart, totalItems} = useContext(CartContext)
+  const { itemCart} = useContext(CartContext)
 
   return (
-    totalItems ? 
+    itemCart.length ? 
       <div className={styles.container}>
       
-        { totalItems > 0 && 
-       itemCart.map((i, index) =>{
-         return (
-           <SelectedCoffeesCard coffee={i} key={index}/>
-         )
-       })}
+        { 
+          itemCart.map((i, index) =>{
+            return (
+              <SelectedCoffeesCard coffee={i} key={index}/>
+            )
+          })}
         <CartTotal/>
 
-        <button type='submit' className={styles.submitBtn}>Confirmar Pedido</button>
+        <button type='submit' 
+          className={styles.submitBtn}>Confirmar Pedido
+        </button>
       </div>
 
       : 

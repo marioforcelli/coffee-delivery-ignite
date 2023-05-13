@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from 'react';
+import { ReactNode, createContext, useEffect, useState } from 'react';
 import { CoffeeProps } from '../../components/Home/CoffeeCard/CoffeCard';
 import formatPrice from '../../helpers/formatPrice';
 import { DELIVERY_FEE_VALUE } from '../../constants';
@@ -9,7 +9,7 @@ export interface CartItemProps extends CoffeeProps {
 }
 
 interface CartProviverProps {
-    totalItems: number,
+    
     addToCart : (coffee: CartItemProps) => void
     removeFromCart : (coffee: CartItemProps) => void
     updateQuantityItem : (coffee: CartItemProps, newQuantity: number) => void
@@ -27,8 +27,21 @@ const CartContext = createContext({} as CartProviverProps);
 
 function CartContextProvider({children}: CartContextProviderProps) {
   const [itemCart, setItemCart] = useState<CartItemProps[]>([])
-  const totalItems = itemCart.length
 
+  useEffect(()=>{
+
+    const storage = JSON.parse(localStorage.getItem('cart') || '')
+    setItemCart(storage);
+    
+  },[])
+
+
+  useEffect(()=>{
+    if(itemCart.length){
+      localStorage.setItem('cart', JSON.stringify(itemCart))
+    }
+    
+  },[itemCart])
 
   const addToCart = (coffee : CartItemProps) =>{
     const isAlreadyOnCart = itemCart.some((i) => i.id === coffee.id)
@@ -44,10 +57,15 @@ function CartContextProvider({children}: CartContextProviderProps) {
 
       })
       setItemCart(newCoffee)  
+  
+      
       
     } else { 
       setItemCart([...itemCart, coffee])  
+     
     }
+
+    
   }
 
 
@@ -88,11 +106,13 @@ function CartContextProvider({children}: CartContextProviderProps) {
         return Number(acc) + (current.price * current.quantity)
       }, 0)
     }
+
+
    
   }
 
   return(
-    <CartContext.Provider value={{addToCart, totalItems, itemCart, removeFromCart, updateQuantityItem, itemSum, sumTotal}}>
+    <CartContext.Provider value={{addToCart, itemCart, removeFromCart, updateQuantityItem, itemSum, sumTotal}}>
       {children}
     </CartContext.Provider>
   )

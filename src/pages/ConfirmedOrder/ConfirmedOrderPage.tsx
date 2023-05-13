@@ -1,4 +1,4 @@
-import ConfirmedOrder from '../components/ConfirmedOrder/ConfirmedOrder';
+import ConfirmedOrder from '../../components/ConfirmedOrder/ConfirmedOrder';
 
 
 
