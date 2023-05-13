@@ -15,6 +15,7 @@ interface CartProviverProps {
     updateQuantityItem : (coffee: CartItemProps, newQuantity: number) => void
     itemSum : (coffee: CartItemProps) => string
     sumTotal : (deliveryFee: boolean) => number
+    cleanCart : () => void
     itemCart: CartItemProps[]
  }
 
@@ -26,20 +27,18 @@ const CartContext = createContext({} as CartProviverProps);
 
 
 function CartContextProvider({children}: CartContextProviderProps) {
-  const [itemCart, setItemCart] = useState<CartItemProps[]>([])
-
-  useEffect(()=>{
-
-    const storage = JSON.parse(localStorage.getItem('cart') || '')
-    setItemCart(storage);
-    
-  },[])
-
-
-  useEffect(()=>{
-    if(itemCart.length){
-      localStorage.setItem('cart', JSON.stringify(itemCart))
+  const [itemCart, setItemCart] = useState<CartItemProps[]>(() => {
+    const storedCartItems = localStorage.getItem('cart');
+    if (storedCartItems) {
+      return JSON.parse(storedCartItems);
     }
+    return [];
+  })
+
+  useEffect(()=>{
+    
+    localStorage.setItem('cart', JSON.stringify(itemCart))
+    
     
   },[itemCart])
 
@@ -107,12 +106,13 @@ function CartContextProvider({children}: CartContextProviderProps) {
       }, 0)
     }
 
-
-   
   }
 
+  const cleanCart = () => setItemCart([])
+
+  
   return(
-    <CartContext.Provider value={{addToCart, itemCart, removeFromCart, updateQuantityItem, itemSum, sumTotal}}>
+    <CartContext.Provider value={{addToCart, cleanCart, itemCart, removeFromCart, updateQuantityItem, itemSum, sumTotal}}>
       {children}
     </CartContext.Provider>
   )

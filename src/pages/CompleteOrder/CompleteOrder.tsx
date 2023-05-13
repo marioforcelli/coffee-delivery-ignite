@@ -6,11 +6,14 @@ import styles from './styles.module.scss'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup'
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react';
+import { CartContext } from '../../contexts/cart';
 
 
 export default function CompleteOrderForm () {
 
   const navigate = useNavigate()
+  const { cleanCart } = useContext(CartContext)
 
   const addressSchema = yup.object({
     cep: yup.string().required('CEP não pode ser vazio'),
@@ -30,6 +33,8 @@ export default function CompleteOrderForm () {
   
 
   const formSubmit = () => {
+
+    cleanCart();
 
     navigate('/confirmed-order', {
       state: {
